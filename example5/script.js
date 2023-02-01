@@ -88,6 +88,7 @@ async function compute() {
     if ( rhinoObject.geometry().userStringCount > 0 ) {
       const g_userStrings = rhinoObject.geometry().getUserStrings()
 
+      //iterate through userData and store all userdata to geometry
       for ( let j = 0; j < g_userStrings.length; j++ ) {
         rhinoObject.attributes().setUserString(g_userStrings[j][0], g_userStrings[j][1])
       }
