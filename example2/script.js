@@ -5,7 +5,9 @@ import { Rhino3dmLoader } from 'three/addons/loaders/3DMLoader.js'
 import rhino3dm from 'rhino3dm'
 import { RhinoCompute } from 'rhinocompute'
 
+
 const definitionName = 'rnd_node.gh'
+
 
 // Set up sliders
 const radius_slider = document.getElementById('radius')
@@ -19,7 +21,10 @@ count_slider.addEventListener('touchend', onSliderChange, false)
 const loader = new Rhino3dmLoader()
 loader.setLibraryPath('https://cdn.jsdelivr.net/npm/rhino3dm@0.15.0-beta/')
 
+
 let rhino, definition, doc
+
+
 rhino3dm().then(async m => {
     console.log('Loaded rhino3dm.')
     rhino = m // global
@@ -44,8 +49,8 @@ rhino3dm().then(async m => {
 
 async function compute() {
 
-
-    const param1 = new RhinoCompute.Grasshopper.DataTree('Radius')
+    
+    const param1 = new RhinoCompute.Grasshopper.DataTree('Size') 
     param1.append([0], [radius_slider.valueAsNumber])
 
     const param2 = new RhinoCompute.Grasshopper.DataTree('Count')

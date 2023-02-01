@@ -21,6 +21,7 @@ const downloadButton = document.getElementById("downloadButton")
 booleanButton.onclick = compute
 downloadButton.onclick = download
 
+
 // create a default material
 const material = new THREE.MeshNormalMaterial({ wireframe: true })
 
@@ -38,6 +39,8 @@ rhino3dm().then(m => {
     // rhino3dm is loaded, let's start!
     init()
 })
+
+
 
 // function to setup the scene, camera, renderer, and load 3d model
 async function init () {
